@@ -1,4 +1,4 @@
-## Data Sources
+## Data
 
 The Southern Poverty Law Center has compiled a [database](https://www.splcenter.org/hate-map) of active hate groups in the U.S. since 2010.
 
