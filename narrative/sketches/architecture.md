@@ -13,7 +13,7 @@
     - `bar-ideology.js`: Count of groups by ideology in NYS (2000-2019) :small_red_triangle: *dropdown*
     - ~~`bar-diverging.js`: Compares increase and decrease of groups by ideology using absolute numbers and percentage change in NYS (2018-2019) :small_red_triangle: *radio button*~~
 - **style.css**
-- **/[data](../data)**
+- **/[data](../../data)**
 
 ### Charts
 
