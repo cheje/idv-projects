@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interactive Data Visualization | Exploratory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div>
+      <div class="section" id="one">
+        <div class="chart" id="map"></div>
+        <div class="caption">
+          Hover over the points of cities with active hate groups to see the total number and types, as of 2019. The map does not include groups for which there was no municipality given. See a map of the U.S. here.
+        </div>
+        <div class="text">
+          <h1>State of Hate in New York</h1>
+          <p>May 2020</p>
+          <br />
+          <br />Haunting images of the Ku Klux Klan terrorizing Black Americans and others who did not fit their distorted perceptions of reality are ingrained in the American psyche as the quitessential hate group in the United States. These days, however, their membership is on the decline. Today, the faces of hate do not hide under white cloths. Instead, they sit in front of computer monitors and cell phone screens. Today, hate groups come follow a variety of ideologies, many of which overlap. Since 2000, the Southern Poverty Law Center has tracked the number of active hate groups in the country. Every year, the longtime civil rights organization releases a report on the current state of organized hate and updates their database to include the hate groups documented as being active in person in the previous year.
+        </div>
+      </div>
+    </div>
+    <div id="bar"></div>
+    <div id="table-hg"></div>
+    <script src="../../lib/d3.js"></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

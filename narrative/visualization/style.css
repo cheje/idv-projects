@@ -1,0 +1,125 @@
+body {
+  font-family: 'Lora', serif;
+  padding-left: 1em;
+}
+
+a {
+  color: #3282b8; /* 005082 */
+  text-decoration: none;
+  border-bottom: 2px #3282b8 solid;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.caption {
+  font-family: "Poppins", sans-serif;
+}
+
+.section#one {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 50% 50%;
+  padding-right: 5em;
+}
+
+.section#one > .graph {
+  grid-column: 0 / 2;
+  grid-row: 1;
+}
+
+.section#one > .caption {
+  grid-column: 0 / 2;
+  grid-row: 1;
+}
+
+.section#one > .text {
+  grid-column: 2 / 3;
+  margin-top: 3em;
+}
+
+.axis path {
+  display: none;
+}
+
+.axis text {
+  font-size: 1.2em;
+  font-family: "Poppins", sans-serif;
+}
+
+.axis line {
+  stroke: #fff;
+  opacity: 0;
+}
+
+#table-cities, #table-hg {
+  width: fit-content;
+  font-size: 0.8em;
+  padding: 0.8em;
+}
+
+#table-hg {
+  overflow-y: scroll;
+  height: 60vh;
+  border: solid 1px #000;
+  /*table-layout: auto;*/
+}
+
+th {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5em;
+  vertical-align: top;
+}
+
+td {
+  word-wrap: break-word;
+  white-space: normal;
+  padding: 0.5em;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+  width: fit-content;
+}
+
+#table-cities th:last-child, #table-cities td:last-child {
+  text-align: right;
+}
+
+#table-hg th:first-child, #table-hg td:first-child {
+  width: 15em;
+}
+
+td:first-child {
+  font-weight: 500;
+}
+
+.columns {
+  text-align: left;
+  font-size: 1.1em;
+}
+
+/* map */
+path.county {
+  fill: #dee3e2; /* #f0f0f0, f9f9f9, dbdbdb */
+  stroke: #fff;
+  stroke-width: 0.7px;
+}
+
+.cities {
+  fill: rgba(199,0,57,.4);
+  stroke: #84142d;
+  stroke-width: 0.5px;
+}
+
+#tooltip {
+  display: block;
+  height: fit-content;
+  position: absolute;
+  padding: 8px;
+  background-color: #fff;
+  pointer-events: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9em;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+}
