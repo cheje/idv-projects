@@ -45,7 +45,7 @@ As shown in the sketch, I initially narrowed down the chart types to bar, table,
 
 <img src="https://github.com/cheje/idv-exploratory/raw/master/prospectus-sketches/architecture.png" width="400">
 
-## [Data](../data)
+## [Data](../../data)
 
 - Per capita number of hate groups by state (CSV) » map
 - Map of 50 states (GeoJSON)
