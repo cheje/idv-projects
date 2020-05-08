@@ -6,5 +6,5 @@ Phase | View
 --- | ---
 **Prospectus, Sketches, Mockups** | [link](sketches)
 **Architecture** | [link](sketches/architecture.png)
-**Data** | [link](data)
+**Data** | [link](../data)
 **Exploratory Visualization** | [link](https://cheje.github.io/idv-projects/exploratory/visualization/)
