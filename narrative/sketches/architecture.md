@@ -22,8 +22,8 @@ File | Place | Description | Year | Data
 `map.js` | NYS | Points of group locations | 2019 | `hg_nys_geocoded.csv`, `nys_counties.json`
 `table-cities.js` :x: | NYS | Groups by ideology by city | 2019 | `hg.csv`
 `bar-compare.js` | US, NYS | % by ideology | 2019 | `hg_ideology_pct.csv`
-`table-hg` | NYS | List of all groups + city, ideology | 2019 | `hg.csv`
 `lines.js` | NYS | Small multiple line charts of ideology count per year | 2010-2019 | `hg_nys_ideologies.csv`
+`table-hg` | NYS | List of all groups + city, ideology | 2019 | `hg.csv`
 `bar-ideology.js` :x: | NYS | Groups by ideology | 2000-2019 | `hg_nys_ideologies.csv`
 
 ### index.html
@@ -36,22 +36,17 @@ File | Place | Description | Year | Data
     <div class="chart" id="map"> </div>
   </div>
 
-  <div class="section" id="two">
-    <div class='text'>text</div>
-    <div class="chart" id="table-cities"> </div>
-  </div>
-
-  <div class='section' id='three'>
+  <div class='section' id='two'>
     <div class='text'>text</div>
     <div class="chart" id="bar-compare"> </div>
   </div>
 
-  <div class="section" id="four">
-    <div class="chart" id="table-hg"> </div>
+  <div class="section" id='three'>
+    <div class="chart" id="lines"> </div>
   </div>
 
-  <div class="section" id='five'>
-    <div class="chart" id="lines"> </div> <!-- or bar-ideology -->
+  <div class="section" id="four">
+    <div class="chart" id="table-hg"> </div>
   </div>
 </div>
 
@@ -62,20 +57,14 @@ File | Place | Description | Year | Data
 ### main.js
 ```
 import { map } from './map.js'
-import { tableCities } from './table-cities.js'
-import { bar } from './bar.js'
-import { barCompare } from './bar-compare.js'
-import { tableHG } from './table-hg.js'
+//import { barCompare } from './bar-compare.js'
 import { lines } from './lines.js'
-// import { barIdeology } from './bar-ideology.js'
+import { tableHG } from './table-hg.js'
 
 map();
-tableCities();
-bar(); // remove
 //barCompare();
-tableHG();
 lines();
-// barIdeology();
+tableHG();
 
 ```
 
