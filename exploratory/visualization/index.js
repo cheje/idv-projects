@@ -16,9 +16,9 @@ let state = {
 };
 
 Promise.all([
-  d3.json("../../../data/usStates.json"),
-  d3.csv("../../../data/hg.csv", d3.autoType),
-  d3.csv("../../../data/hg_ideology_across.csv", d3.autoType),
+  d3.json("../../data/usStates.json"),
+  d3.csv("../../data/hg.csv", d3.autoType),
+  d3.csv("../../data/hg_ideology_across.csv", d3.autoType),
 ]).then(([geojson, hg, ideology]) => {
   console.log("ideology", ideology);
   state.geojson = geojson;
