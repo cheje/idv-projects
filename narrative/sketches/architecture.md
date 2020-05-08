@@ -10,7 +10,7 @@
   - `table-hg.js`: list of all groups in NYS (2019) :small_red_triangle: *dropdown*
   - One of these charts:
     - `lines.js`: Small multiple line charts of count by ideology over past two decades (2000-2019)
-    - `bar-ideology.js`: Count of groups by ideology in NYS (2000-2019) :small_red_triangle: *dropdown*
+    - ~~`bar-ideology.js`: Count of groups by ideology in NYS (2000-2019) :small_red_triangle: *dropdown*~~
     - ~~`bar-diverging.js`: Compares increase and decrease of groups by ideology using absolute numbers and percentage change in NYS (2018-2019) :small_red_triangle: *radio button*~~
 - **style.css**
 - **/[data](../../data)**
@@ -20,11 +20,11 @@
 File | Place | Description | Year | Data
 --- | --- | --- | --- | ---
 `map.js` | NYS | Points of group locations | 2019 | `hg_nys_geocoded.csv`, `nys_counties.json`
-`table-cities.js` | NYS | Groups by ideology by city | 2019 | `hg.csv`
+`table-cities.js` :x: | NYS | Groups by ideology by city | 2019 | `hg.csv`
 `bar-compare.js` | US, NYS | % by ideology | 2019 | `hg_ideology_pct.csv`
 `table-hg` | NYS | List of all groups + city, ideology | 2019 | `hg.csv`
 `lines.js` | NYS | Small multiple line charts of ideology count per year | 2010-2019 | `hg_nys_ideologies.csv`
-`bar-ideology.js` | NYS | Groups by ideology | 2000-2019 | `hg_nys_ideologies.csv`
+`bar-ideology.js` :x: | NYS | Groups by ideology | 2000-2019 | `hg_nys_ideologies.csv`
 
 ### index.html
 ```
