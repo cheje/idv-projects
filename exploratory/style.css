@@ -1,16 +1,21 @@
+* {
+  margin: 0;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  padding: 0em 2em;
+  padding: 1.75em;
   background-color: #F8F8F8;
+  color: #323232;
 }
 
 #dashboard {
   display: grid; /* container */
   grid-template-columns: 1fr 1fr 1fr; /* fr = fraction */
   /*grid-template-rows: 1fr, 1fr; /* 1/2 and 1/2, 1 frac-1 frac */
-  column-gap: 1em;
+  column-gap: 0.5em;
   row-gap: 1em;
-  padding-top: 2em;
+  padding-top: 1em;
   height: 70vh;
   grid-template-rows: 1fr, 1fr;
 }
@@ -47,7 +52,8 @@ body {
 }
 
 #table {
-  margin: 0em;
+  margin: 0;
+  margin-left: -1em;
   overflow-y: scroll;
   grid-row-start: 1;
   grid-row-end: span 2;
@@ -64,6 +70,15 @@ tbody tr {
 td {
   word-wrap: break-word;
   white-space: normal;
+  padding-right: 0.75em;
+}
+
+td:first-child {
+  font-weight: 500;
+}
+
+td:not(:first-child) {
+  color: #666;
 }
 
 h1 {

@@ -351,6 +351,8 @@ td:not(:first-child) {
   opacity: 1;
 }
 
+/* resources box */
+
 ul {
   list-style-type: square;
 }
