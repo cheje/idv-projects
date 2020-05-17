@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interactive Data Visualization | Exploratory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+      <div class="section" id="one">
+        <div class="chart" id="map"></div>
+          <div class="caption">
+          <p>Hover over the points of cities with active hate groups to see the total number and types, as of 2019. Double click to zoom in. Click once to zoom back out. The map does not include the 11 groups for which there was no municipality given and instead operates at a statewide level. <a href="https://cheje.github.io/idv-projects/exploratory/visualization/" target="_blank">See a map of the U.S. here</a>.</p>
+          <hr />
+          </div>
+        <div class="text">
+          <br />
+          <h1>State of Hate in New York:</h1>
+          <h2><span style="font-weight: 400">Beyond the Numbers</span></h2>
+          <div class="date">May 2020</div><br />
+          <p>Horrific images of the Ku Klux Klan in pointed hoods and white robes are ingrained in the American psyche as the quintessential hate group in the United States. These days, however, the group is “largely rejected as outmoded by most white supremacists,” <a href="https://www.splcenter.org/news/2020/03/18/year-hate-and-extremism-2019" target="_blank">according to the Southern Poverty Law Center</a>. Since 1999, the advocacy organization has released a yearly census of active U.S. <span class="def-tooltip">hate groups<span class="def-tooltip-text">"A hate group is an organization that – based on its official statements or principles, the statements of its leaders, or its activities – has beliefs or practices that attack or malign an entire class of people, typically for their immutable characteristics." — SPLC » Methodology</span></span> in the previous year. Today, the faces of hate do not hide under white cloth. Instead many spread their message from <a href="https://www.splcenter.org/news/2020/03/18/year-technology-2019" target="_blank">behind computer screens</a> or through <a href="https://www.splcenter.org/news/2020/03/18/spotlight-tactics-flurry-flyering-2019" target="_blank">flyers and banners</a>. This year’s report, “<a href="https://www.splcenter.org/year-hate-and-extremism-2019" target="_blank">The Year in Hate and Extremeism in 2019</a>,” documented 940 active hate groups, down from an all-time high of 1,020 in 2018, categorized by more than a dozen ideologies – the top five being Black separatist, white nationalist, general hate, anti-Muslim and anti-LGBTQ. With 255 chapters, Black separatist hate groups led in number but, as the SPLC report points out: “Even though they have little to no impact on mainstream politics and no high-level defenders in the media, the two antisemitic terror attacks in the New York City area in 2019 demonstrate that this ideology can influence individuals’ behavior.”</p>
+        </div>
+      </div>
+
+      <!-- text -->
+      <div class="section" id="two">
+        <div class="text">
+          <p style="margin-bottom:2em;">While absolute numbers give an idea of the scope of organized hate, the influence and impact of a hate group or an ideology is not necessarily measured by its number of locations. Instead it is perhaps based more on whether it has infiltrated into bodies of power and other means that allow them to expand their reach, have financial and long-term support, and ultimately transform their hatred into normalized beliefs. While raw numbers paint an initial image of the state of hate groups, understanding the context in which they exist or even thrive provides a more comprehensive picture. The visualizations presented here are of course based on those numbers but they are also an attempt to build on that data and present comparisons and trends, from which further questions and concepts could be considered.</p>
+
+          <p style="margin-bottom:2em;">In New York State, the SPLC documented 44 active hate groups last year, 33 of which included the municipality where they were located while 11 operated at a statewide level. The map above gives an overview of where hate groups in general exist. Hovering over the dots will give a list of the types of groups. Most of those municipalities, all located in the lower half of the state, have 1-3 groups, from the large cities of Buffalo, Rochester and Syracuse down to Hopewell Junction and Fishkill in Dutchess County, population at under 400 and 2,080, respectively. Then there's the five boroughs of New York City, which is home to half of the state's hate groups. While Black separatist groups are found in cities all within the top 10 most populated in the state where more than 60,000 live, the municipalities with under 50,000 residents have groups that adhere to anti-Muslim, general hate, radical traditional Catholicism, and white nationalist ideologies. How did leaders choose those locations? What factors in their environment prompted them to pursue a mission of hatred? Meanwhile in New York City,  considered one of the most diverse cities in the country, neighborhood gentrification, disparate enforcement of the law, and school segregation persist. There, all of the aforementioned ideologies with the exception of radical traditional Catholicism are found. In which kind of municipality would a hate group thrive. A town where most locals share similar social and economic experiences? Or a metropolis with millions of people from varying backgrounds?</p>
+
+          <p>The visualizations further down focus on the ideologies – or how the hate groups are categorized – noted on the map’s tooltips.</p>
+        </div>
+      </div>
+
+      <!-- ideologies -->
+      <div class="section chart-section" id ="three">
+        <div class="chart-title">Hate Group Ideologies in 2019</div>
+        <div class="caption">
+          The SPLC classified the 940 hate groups identified last year into 16 ideologies. See their <a href="https://www.splcenter.org/fighting-hate/extremist-files/ideology" target="_blank">descriptions on the organization's website</a>. Highlighted below are those found <span style="background-color: #f6f578;">in New York State</span>.
+          <br />&nbsp;
+        </div>
+          <div>
+            Anti-Immigrant, <span style="background-color: #f6f578;">Anti-LGBTQ</span>, <span style="background-color: #f6f578;">Anti-Muslim</span>, <span style="background-color: #f6f578;">Black Separatist</span>, Christian Identity, <span style="background-color: #f6f578;">General Hate</span>, <span style="background-color: #f6f578;">Hate Music</span>, Holocaust Denial, <span style="background-color: #f6f578;">Ku Klux Klan</span>, Male Supremacy, Neo-Confederate, <span style="background-color: #f6f578;">Neo-Nazi</span>, <span style="background-color: #f6f578;">Neo-Volkisch</span>, <span style="background-color: #f6f578;">Racist Skinhead</span>, <span style="background-color: #f6f578;">Radical Traditional Catholicism</span>, <span style="background-color: #f6f578;">White Nationalist</span>
+        </div>
+      </div>
+
+      <!-- text -->
+      <div class="section" id="four">
+        <div class="text"><br /><br />
+          <p>The grouped bar chart below compares the percentages of each ideology in New York and the country as a whole. Using relative, as opposed to absolute, numbers here allows such a comparison to be made. And communicates which kinds of groups have a higher share of the whole in New York – specifically, Anti-Muslim, Black separatist, general hate, hate music, radical traditional Catholicism and white nationalist groups. In what state-specific environments do these groups crop up and why? As for those groups with larger proportional representation in the U.S., such as anti-immigrant, anti-LGBTQ and neo-Nazi, do those groups exist in any regional clusters? This kind of chart frames the data in another perspective: comparing it with the states overall and then seeing what actually has a larger percentage in New York.</p>
+        </div>
+      </div>
+
+      <!-- bar -->
+      <div class="section chart-section" id="five">
+        <hr />
+        <div class="chart-title">Comparing Ideologies in New York and the United States</div>
+        <div class="caption">
+          See the number of hate groups belonging to an ideology as a percentage of the total hate groups in New York State and in the US in 2019. For example, New York has two documented anti-LGBTQ groups, or 4.5% of the 44 hate groups in the state while the US has 70 groups, or 7.4% of the 940 hate groups in the country.
+          <br />&nbsp;
+        </div>
+        <div class="chart" id="bar"></div>
+      </div>
+
+      <!-- text -->
+      <div class="section" id="six">
+        <div class="text">
+          <p>Returning to only New York State data, the line chart presents one ideology at a time and its growth or decline over the past two decades. A bit of context is added into the background, with light red based on the years of a Republican president and light blue of a Democratic president. Could an increase in groups of a particular ideology be, in part, a response to the election of a president? Anti-Muslim groups, for example, first appeared and steadily increased in New York during Barack Obama’s first term before decreasing in his second term. White nationalist groups followed the same trajectory but, like anti-Muslim groups, that path started nudging up again toward or at the end of Obama’s term and into Donald Trump’s.</p>
+        </div>
+      </div>
+
+      <!-- line chart -->
+      <div class="section chart-section" id="seven">
+        <hr />
+        <div class="chart-title">Timeline: Number of Hate Groups Categorized by Ideology in New York</div>
+        <div class="caption">
+          Choose an ideology from the menu to see the number of hate groups belonging to the category over the past two decades. The <span style="background-color: #faf2f2;">light red background represents the years in which a Republican president has held office</span>, George Bush from 2000-2008 and Donald Trump since 2017, and the <span style="background-color: #f1fcfc;">light blue background represents the terms of Democratic President Barack Obama</span>.
+          <br />&nbsp;
+        </div>
+        <select id="dropdown" name="dropdown"></select>
+        <div class="chart" id="line"><br /></div>
+      </div>
+
+    <!-- text -->
+    <div class="section" id="eight">
+      <div class="text">
+      <p>Given the relatively small changes, in the context of raw data, from one year to the next, and the need to consider other factors besides political parties in power, the visualization is more for seeing overall trends over time. And the questions these trends might trigger, especially when the data might not follow expectations.</p>
+      </div>
+    </div>
+
+    <!-- table -->
+    <div class="section" id="nine">
+      <div class="text">
+        <p style="margin-bottom:2em;">The final visualization presents only text and in doing so, intends to give another perception of the size of the data. From strictly the standpoint of raw numbers, 44 data points is a comparatively small set. In the table, see the names of all the hate groups in New York, sorted by ideology and city. Scrolling through and taking in the names of each hate group in the state can perhaps give another impression – that in the end, in the context of hate groups and not of data points, 44 is indeed a substantial number. And considered with the charts above, the table can prompt numerous questions including what fuels organized hatred over time, and over municipalities, states and entities with the power to maintain and spread it.</p>
+
+        <p>For more information on sources of funding for hate groups and reported hate crimes and bias incidents, see the links below.</p>
+      </div>
+      <div class="chart-title">
+      <hr />
+      All Documented Hate Groups in New York</div>
+      <div class="caption">Groups in 2019 sorted alphabetically by ideology and city<br />&nbsp;</div>
+      <div class="chart" id="table"></div>
+    </div><br /><br />
+
+    <!-- links -->
+    <div class="section chart-section" id ="three">
+      <div class="chart-title">Resources on hate groups</div>
+        <div><hr />
+          <p class="resources">“The Year in Hate and Extremeism in 2019” (<a href="https://www.splcenter.org/year-hate-and-extremism-2019" target="_blank">SPLC</a>)</p>
+          <blockquote>
+            "It is time to move beyond the illusion that hate violence and extremism is merely a criminal crisis in America. It is also a political crisis. It has to be engaged politically."
+          </blockquote>
+          <p class="resources">How hate is funded:
+          <ul>
+            <li>"Hate-Free Philanthropy: Identifying Opportunities and Obstacles to Safeguard the Sector" (<a href="https://www.splcenter.org/20200310/hate-free-philanthropy-identifying-opportunities-and-obstacles-safeguard-sector" target="_blank">SPLC</a>)</li>
+            <li>"Funding Hate: How White Supremacists Raise Their Money" (<a href="https://www.adl.org/resources/reports/funding-hate-how-white-supremacists-raise-their-money" target="_blank">Anti-Defamation League</a>)</li>
+            <li>"Funding hate: How online merchants and payment processors aid white nationalists" (<a href="https://www.salon.com/2020/04/27/funding-hate-how-online-merchants-and-payment-processors-aid-white-nationalists/" target="_blank">Salon</a>)</li>
+          </ul>
+        </p>
+          <p class="resources">Hate crimes and bias incidents:
+          <ul>
+            <li><a href="https://www.splcenter.org/hatewatch" target="_blank">Hate Watch</a>: SPLC blog on activites of the radical right in the U.S.</li>
+            <li><a href="https://projects.propublica.org/hate-news-index/" target="_blank">Documenting Hate News Index</a>: Database from ProPublica, in partnership with Google News Lab, of media coverage of incidents that appeared in Google News</li>
+            <li><a href="https://projects.propublica.org/graphics/hatecrimes" target="_blank">Documenting Hate</a>: Working with newsrooms, ProPublica built a database of reports and tips on hate incidents from after the 2016 election through 2019</li>
+            <li><a href="https://www.adl.org/education-and-resources/resource-knowledge-base/adl-heat-map" target="_blank">ADL H.E.A.T. Map</a>: An interactive map and a separate database from the Anti-Defamation League on extremist and anti-Semitic incidents in the U.S.</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <script src="../lib/d3.js"></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

@@ -8,8 +8,8 @@ export function map() {
   let svg;
 
   Promise.all([
-    d3.json("../../data/nys_counties.json"),
-    d3.csv("../../data/hg_nys_geocoded.csv")])
+    d3.json("../data/nys_counties.json"),
+    d3.csv("../data/hg_nys_geocoded_2019.csv")])
     .then(([nys, cities]) => {
     const counties = topojson.feature(nys, nys.objects.cb_2015_new_york_county_20m);
     console.log("nys:", nys);
@@ -78,16 +78,19 @@ export function map() {
       .on("mouseover", d => { d3
         .select("#tooltip")
         .html(`
-          <strong>${d.city}, NY
-          <br />${d.city_total}</strong> hate group(s)
+          <strong>${d.city}, NY</strong>
+          <br /><strong>${d.city_total}</strong> hate group(s)
+          <span style="font-size:0.85em;">
+          <br />Population: ${d.city_pop}
           <hr style="border-top: 1px;" />
-          <span style="font-size:0.85em; color:#c70039;">
+          <span style="color:#c70039;">
           ${d.ideologies}
+          </span>
           </span>
           `)
         .transition()
         .duration(200)
-        .style("opacity", 0.8)
+        .style("opacity", 0.9)
       })
       .on("mouseout", d => { d3
         .select("#tooltip")
@@ -98,7 +101,6 @@ export function map() {
         .style("left", (d3.event.pageX+20)+"px")
         .style("top", (d3.event.pageY+20)+"px")
       });
-
 
     svg.call(zoom);
 
