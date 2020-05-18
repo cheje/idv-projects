@@ -1,6 +1,6 @@
 export function bar() {
 
-// https://observablehq.com/@d3/grouped-bar-chart
+// Mike Bostock: https://observablehq.com/@d3/grouped-bar-chart
 
   const width = window.innerWidth * 0.65,
     height = window.innerHeight * 0.6,
@@ -109,10 +109,18 @@ export function bar() {
         .attr("x", d => x1scale(d.key))
         .attr("y", d => yScale(d.value))
         .attr("width", x1scale.bandwidth())
-        .attr("id", function(d, i) {return 'bar_' + i})
+        //.attr("id", function(d, i) {return 'bar_' + i})
         .attr("height", d => yScale(0) - yScale(d.value))
         .attr("fill", d => color(d.key))
-        .style("opacity", 0.7);
+        //.style("opacity", 0.7)
+        .attr("opacity", function(d) {
+          const parentData = d3.select(this.parentNode).data()[0];
+          if (parentData['New York'] > parentData.US) {
+                  return 0.9
+              } else {
+                  return 0.5
+              }
+          })
 
     svg.append("g")
         .call(xAxis)
@@ -134,7 +142,7 @@ export function bar() {
 
     svg.append("g")
         .call(legend)
-        .style("opacity", 0.7);
+        .style("opacity", 0.9);
 
     return svg.node();
 
