@@ -72,7 +72,6 @@ hr {
   font-family:'Poppins', sans-serif;
   font-size: 0.9em;
   text-transform: uppercase;
-  font-weight: bold;
   padding-top: 0.5em;
 }
 
@@ -169,7 +168,7 @@ path.county {
 
 .yAxis-label {
   font-size: 1.2em;
-  fill: #000;
+  fill: #323232;
   text-anchor: middle;
   font-weight: regular;
 }
@@ -348,7 +347,7 @@ td:not(:first-child) {
 
 .def-tooltip:hover .def-tooltip-text {
   visibility: visible;
-  opacity: 1;
+  opacity: 0.9;
 }
 
 /* resources box */

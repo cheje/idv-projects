@@ -98,7 +98,7 @@ export function bar() {
             .tickSize(-width)
             .tickFormat(""));
 
-    svg.append("g")
+    const bars = svg.append("g")
       .selectAll("g")
       .data(data)
       .join("g")
@@ -109,10 +109,10 @@ export function bar() {
         .attr("x", d => x1scale(d.key))
         .attr("y", d => yScale(d.value))
         .attr("width", x1scale.bandwidth())
-        .attr("id", console.log(d => d3.max(data, d=>d.value)))
+        .attr("id", function(d, i) {return 'bar_' + i})
         .attr("height", d => yScale(0) - yScale(d.value))
         .attr("fill", d => color(d.key))
-        .style("opacity", 0.7)
+        .style("opacity", 0.7);
 
     svg.append("g")
         .call(xAxis)
