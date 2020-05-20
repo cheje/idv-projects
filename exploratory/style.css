@@ -3,10 +3,15 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   padding: 1.75em;
   background-color: #F8F8F8;
   color: #323232;
+}
+
+.middle {
+  margin: auto;
+  width: 87%;
 }
 
 #dashboard {
@@ -93,7 +98,7 @@ h3 {
 
 p {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 a:link, a:visited {
