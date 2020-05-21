@@ -98,6 +98,11 @@ export function bar() {
             .tickSize(-width)
             .tickFormat(""));
 
+
+            var maxValue = d3.max([  // Find the max value of a list of 2 elements
+    d3.max(data, function(d) { return +d['New York']; })
+]);
+
     const bars = svg.append("g")
       .selectAll("g")
       .data(data)
@@ -114,9 +119,9 @@ export function bar() {
         .attr("fill", d => color(d.key))
         //.style("opacity", 0.7)
         .attr("opacity", function(d) {
-          const parentData = d3.select(this.parentNode).data()[0];
-          if (parentData['New York'] > parentData.US) {
-                  return 0.9
+
+          if (d.value === maxValue) {
+                  return 1
               } else {
                   return 0.5
               }
