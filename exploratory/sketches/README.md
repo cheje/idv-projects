@@ -5,7 +5,7 @@ For the exploratory project, I was originally going to use data on cetaceans in 
 - Which states have the highest per capita number of hate groups?
 - How do the type of hate groups differ by state?
 
-Rather than finding numbers on a national level, I will likely keep it at a state level and use the project to compare hate groups between states. The SPLC "identified 940 hate groups operating across the country in 2019, a slight decline from the all-time high of 1,020 in 2018" but at the time same time, the number of white nationalist and anti-LGBTQ groups increased from 2018. The intended audience of this project would be those concerned by this atmosphere of sustained and growing organized hatred, regardless of their familiarity with the subject matter.
+Rather than finding numbers on a national level, I will likely keep it at a state level and use the project to compare hate groups between states. The SPLC "identified 940 hate groups operating across the country in 2019, a slight decline from the all-time high of 1,020 in 2018" but at the same time, the number of white nationalist and anti-LGBTQ groups increased from 2018. The intended audience of this project would be those concerned by this atmosphere of sustained and growing organized hatred, regardless of their familiarity with the subject matter.
 
 The data lists all active hate groups' tracked in 2019 along with their location, ideology and other details. I hope to have a chart or two that present aggregated numbers, including:
 
