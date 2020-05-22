@@ -6,90 +6,110 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <h1>Final Portfolio</h1>
     <div class="byline">Jennifer Cheng &nbsp;|&nbsp; Interactive Data Visualization &nbsp;|&nbsp; May 2020</div><br /><br /><br />
 
-    <h2>Exploratory Project</h2><br />
-    <a href="https://cheje.github.io/idv-projects/exploratory/" target="_blank"><img src="./media/exploratory_ss.gif" alt="Exploratory project" width="750" class="center" /></a>
+    <!-- buttons: https://stackoverflow.com/questions/55710416/toggle-text-between-multiple-buttons -->
+    <button data-toggle="tab" data-target="#exploratory" class="button">Exploratory</button>&nbsp;
+    <button data-toggle="tab" data-target="#narrative" class="button">Narrative</button>
+    <br /><br />
+    <div class="tab-contents">
+      <div class="tab" id="exploratory">
+      <hr />
+      <h2>Exploratory Project</h2><br />
+        <a href="https://cheje.github.io/idv-projects/exploratory/" target="_blank"><img src="./media/exploratory_ss.gif" alt="Exploratory project" width="750" class="center" /></a>
 
-      <p>My <a href="https://cheje.github.io/idv-projects/exploratory/" target="_blank">exploratory project</a> started off using data on cetaceans in captivity across the U.S. After having some difficulty figuring out how to present this in different charts that synced, I decided to use the same data I had visualized for the time series tutorial – hate groups, as tracked by the Southern Poverty Law Center (SPLC), an advocacy organization based in Alabama. By the time of the exploratory project, they had updated their database to include active hate groups in 2019. At the start of the project, I planned to include a per capita map, like the "hate map" found on their site, which when clicked by state brings up a list of specific hate groups in the state. I wanted to recreate this in D3, in a more basic format limited to what I could produce, while also add a visualization that would aggregate the number of groups in each state by ideology. I considered various combinations of visuals:</p>
+        <p>In my <a href="https://cheje.github.io/idv-projects/exploratory/" target="_blank">exploratory project</a>, I started out using data on cetaceans in captivity across the U.S. After having some difficulty figuring out how to present this in different charts that updated in sync, I decided to use the same data I had visualized for the time series tutorial – U.S. hate groups, as tracked by the Southern Poverty Law Center (SPLC), an advocacy organization based in Alabama. By the time of the exploratory project, they had updated their database to include active hate groups in 2019. I planned to include a per capita map, like the <a href="https://www.splcenter.org/hate-map" target="_blank">hate map</a> found on their site, which when clicked by state brings up a list of specific hate groups. I wanted to recreate this in D3, in a more basic format limited to what I could produce, while also adding a visualization that would aggregate the number of groups in each state by ideology. I considered various combinations of visuals:</p>
 
-      <img src="https://raw.githubusercontent.com/cheje/idv-exploratory/master/prospectus-sketches/sketch.png" alt="Sketch of possible charts" width="750" class="center" />
+        <img src="https://raw.githubusercontent.com/cheje/idv-exploratory/master/prospectus-sketches/sketch.png" alt="Sketch of possible charts" width="750" class="center" />
 
-      <p>Eventually, I settled on a bar chart for the aggregated data, in addition to the map and table. When a state is clicked on, the two other charts would show the number of groups by belief and a listing of all the groups, respectively. This dashboard of sorts would target anyone with an interest in hate groups at a state level especially amid a political and social environment of heightened organized hatred. The data provided the names of all groups tracked by the SPLC along with their location, ideology and other details. In order to get the data suitable for the map, I used R to manipulate it. Using the `tidycensus` package, I got each state's population and then divided the total number of groups by that number to find the the per capita number of hate groups for each state. This produced the <a href="https://github.com/cheje/idv-projects/blob/master/data/hg.csv" target="_blank">hg.csv</a> file, which would be used for the map and the table. While the number of groups per ideology in a state could be aggregated from that, I created another file instead in R as my attempts to reconfigure the data in D3 did not work. This second file, <a href="https://github.com/cheje/idv-projects/blob/master/data/hg_ideology_across.csv" target="_blank">hg_ideology_across.csv</a>, aggregated the number of groups by ideology for each state and was used for the bar chart. I also used R to make a quick dashboard of how the visuals would be laid out.</p>
+        <p>I settled on a bar chart for the aggregated data, in addition to the map and table. When a state is clicked on, the bar chart would show the number of groups by belief and the table would list all the groups. This dashboard would target anyone with a concern in the current environment of growing organized hatred. The data provided the names of all groups tracked by the SPLC along with their location, ideology and other details. In order to get the data suitable for the map, I used R to manipulate it. Using the `tidycensus` package, I got each state's population and then divided the total number of groups by that number to find the the per capita amount of hate groups for each state. This produced the <a href="https://github.com/cheje/idv-projects/blob/master/data/hg.csv" target="_blank">hg.csv</a> file, which would be used for the map and the table. While the number of groups per ideology in a state could be aggregated from that using JavaScript, I created another file in R, <a href="https://github.com/cheje/idv-projects/blob/master/data/hg_ideology_across.csv" target="_blank">hg_ideology_across.csv</a>, as my attempts to reconfigure the data in D3 did not work and used that for the bar chart. I also used R to make a quick dashboard of how the visuals would be laid out.</p>
 
-      <img src="https://raw.githubusercontent.com/cheje/idv-exploratory/master/prospectus-sketches/mockup.png" alt="Mockup of dashboard created in R" width="750" class="center" />
+        <img src="https://raw.githubusercontent.com/cheje/idv-exploratory/master/prospectus-sketches/mockup.png" alt="Mockup of dashboard created in R" width="750" class="center" />
 
-      <p>Heading into the coding process seemed rather intimidating but drawing the skeletal diagram below helped organize it a bit. At that point I was still toying with the idea of a possible treemap but that quickly disappeared once I hit the actual coding.</p>
+        <p>Heading into the coding process seemed rather intimidating but drawing the skeletal diagram below helped organize it a bit. I was still toying with the idea of using a treemap but that quickly disappeared once I hit the actual coding.</p>
 
-      <img src="https://raw.githubusercontent.com/cheje/idv-exploratory/master/prospectus-sketches/architecture.png" alt="Code diagram" width="750" class="center" />
+        <img src="https://raw.githubusercontent.com/cheje/idv-exploratory/master/prospectus-sketches/architecture.png" alt="Code diagram" width="750" class="center" />
 
-      <p>Getting the choropleth map to appear initially seemed challenging enough but it would turn out to be relatively smooth compared the great difficulty I had getting the three visuals to sync. Once the map appeared with the color scale I intended and each state was being properly read as the actual state, I moved on to the bar chart. I encountered the following issues:</p>
+        <p>Getting the choropleth map to appear initially seemed challenging enough but it would turn out to be relatively smooth compared to the great difficulty I had getting the state of the three visuals to update together. Once the map appeared with a color scale and each state was being properly read as the desired state, I moved on to the bar chart and encountered the following issues:</p>
+          <ul>
+            <li>Getting the bars to fit in the condensed space allotted for the chart</li>
+            <li>Having the ideology numbers and names appear at an equal distance to the right of the bars</li>
+            <li>Making the data change based on the state clicked</li>
+          </ul>
+        <p>The table started out less challenging to put on the page but then the roadblock came in getting the hate group list of the first state to disappear when a new state was clicked on. Feeling the need to step away from that after a while, I focused on the design. I wanted to use red or blue colors to signify that these are U.S. hate groups and settled on a warm red-orange-beige color palette – red has a connotation of alarm fitting for the subject matter but I wanted a more subtle palette than one dominated by a bold red. For the bar chart and map I used analogous color ranges.</p>
+
+        <p>I chose a typeface that would fit all the text in the tight space for the visuals. This was the same reason for choosing only three fields for the table. Meanwhile, I thought of different orientations for the three charts including putting the map in the middle and slightly above the other two but by then in the project, I just wanted everything to sync properly. By a certain point, it came down to playing around with the code and seeing what worked. Then, I could add some elements that would actually tell the user the state they accessed – a tooltip and a button on which the state name would appear until another one was clicked on.</p>
+
+        <p>My design process would pretty much mirror the one taught in class from writing and sketching it out whether on paper or using computer software. Since learning about this process, I've paid more attention to articles on the benefits of sketching out ideas. I believe this, along with the code that produced the end product, became a most helpful element to learn. And of course, every step served as vital practice particularly in trial and error. The final dashboard more or less stayed in line with what I had in mind in the prospectus.</p>
+
+        <p>To improve my exploratory project, I would try to experiment with other layouts, eliminate the NULL in the button and the black square of the tooltip that appears when the page first loads, and have some kind of message in the bar and table charts that would explain the information that would appear once a state is clicked on. I would also figure out how to add more details to the tooltip for the map and format the table content differently.</p>
+      </div>
+
+      <div class="tab" id="narrative">
+      <hr />
+      <h2>Narrative Project</h2><br />
+
+        <a href="https://cheje.github.io/idv-projects/narrative/" target="_blank"><img src="./media/narrative_ss.gif" width="750" alt="Narrative project" class="center" /></a>
+
+        <p>For my <a href="https://cheje.github.io/idv-projects/narrative/" target="_blank">narrative project</a>, I used the same data source as above, the Southern Poverty Law Center, but focused on New York State hate groups. Where are these groups located and how does NYC compare to the rest of the state? What are the most frequent ideologies followed and how do they compare to the country as a whole? Have the most active ideologies changed over the past decade? I started out, like above, planning to having a map as one of the visualizations. The rest would include some combination of the standard bar and line charts.</p>
+
+          <img src="https://raw.githubusercontent.com/cheje/idv-projects/master/narrative/sketches/narrative_sketch.png" alt="Narrative project sketch" width="750" class="center" />
+
+        <p>The audience would be the same as my exploratory project. Doing a bit of data manipulation in R again, I ended up with the following datasets, some of which were created later on in the process after starting to code the visualizations.</p>
+
         <ul>
-          <li>Getting the bars to fit in the condensed space allotted for the chart</li>
-          <li>Having the ideology numbers and names appear to the right of the bars</li>
-          <li>Getting the information to change based on the state clicked</li>
-          <li>Getting the numbers to start out as 0 and then change to the right number when a state was clicked on</li>
+          <li><a href="https://github.com/cheje/idv-projects/blob/master/data/hg_nys_2019.csv" target="_blank">hg_nys_2019.csv</a>: List of all 44 NYS hate groups in 2019, with their ideology, location and whether it served as the headquarters (table)</li>
+          <li><a href="https://github.com/cheje/idv-projects/blob/master/data/hg_ideology_pct_2019.csv" target="_blank">hg_ideology_pct_2019.csv</a>: Percent of each ideology out of total hate groups in NYS and US (grouped bar chart)</li>
+          <li><a href="https://github.com/cheje/idv-projects/blob/master/data/hg_nys_geocoded_2019.csv" target="_blank">hg_nys_geocoded_2019.csv</a>: List of cities with at least one hate group, their geographical coordinates, along with population and number of each ideology, with some HTML included in some of the fields for formatting on the tooltip (map)</li>
+          <li><a href="https://github.com/cheje/idv-projects/blob/master/data/hg_nys_geocoded_2019.csv" target="_blank">hg_nys_ideologies.csv</a>: List of all ideologies and their number of groups in NYS since 2000 (line chart)</li>
         </ul>
-      <p>The table started out less challenging to put on the page but then the roadblock came in getting the hate group list of the original state to disappear when a new state was clicked on. Feeling the need to step away from that after a while, I focused on the design. I wanted to use red or blue colors to signify that these are U.S. hate groups and settled on a warm red-orange-beige color palette as red has a connotation of alarm and distress but I wanted a more subtle palette than one dominated by a bold red.</p>
 
-      <p>For the bar chart I added a color range to mirror the map but not replicate the colors exactly. I chose the font primarily to fit all the text in the tight spaces for the visuals. This was the same reasoning for choosing only three fields for the table. Meanwhile, I thought of different orientations for the three charts including putting the map in the middle and slightly above the other two but by then in the project, I just wanted everything to sync properly. Eventually, many weeks later, they did as I had, more or less, intended. At a certain point, it came down to playing around with the code and seeing what worked. Then, I could add some extra elements that would actually tell the user the state they accessed – a tooltip and a button in which the state name would appear until another one was clicked on.</p>
+        <p>This step helped me to narrow down the visualizations I would use, shown in the mockup.</p>
 
-      <p>The design process would pretty much mirror the one taught in class from writing and sketching it out whether on paper or using computer software. Since learning about this process, I've paid more attention to videos and podcast episodes and blog posts on the benefits of sketching out ideas. Going forward I'll add these drawings and notes to my process. I believe this, along with the code that produced the end product, became the most helpful elements I learned. And of course, every step served as vital practice particularly in trial and error. The final dashboard more or less stayed in line with what I had in mind during the prospectus stage.</p>
+        <img src="https://raw.githubusercontent.com/cheje/idv-projects/master/narrative/sketches/narrative_mockup.png" alt="Narrative project mockup" width="750" class="center" />
 
-      <p>To improve my exploratory project, I would try to experiment with other layouts, eliminate the NULL and black square of the tooltip that appears when the page first loads, and having some kind of message in the bar and table charts that would explain the information that would appear once a state is clicked on. I would also figure out how to add more details to the tooltip for the map and format the table content differently.</p>
-    <hr />
-    <h2>Narrative Project</h2><br />
+        <p>
+          This time the charts were easier to make since they stood alone. I had not used much CSS in recent years but thanks to months of practice for the assignments, I became comfortable enough with it again and was able to spend more time on it in this project - especially to lay out the charts and text, and find a combination of serif and sans-serif fonts. Different from the other assignments and projects, this was a more text-heavy report so I enjoyed this additional task of focusing on how to present the text. I also thought more about applying consistent formatting to the visualizations that would indicate they were all part of the same project. As for the charts themselves, I considered making more comparisons between NYS and the US, as I did in the line chart, but that can instead be something for improving and building on the project in the future. For this assignment, in addition to doing the visualizations, an especially helpful element I learned was the CSS grid layout and how to arrange the charts and text, whether side-by-side or one after the other.
+        </p>
 
-      <a href="https://cheje.github.io/idv-projects/narrative/" target="_blank"><img src="./media/narrative_ss.gif" width="750" alt="Narrative project" class="center" /></a>
-
-      <p>For my <a href="https://cheje.github.io/idv-projects/narrative/" target="_blank">narrative project</a>, I used to same data source as above, the Southern Poverty Law Center, but focused on New York State hate groups. Where are these groups located and how does NYC compare to the rest of the state? What are the most frequent ideologies followed and how do they compare to the country as a whole? Have the most active ideologies changed over the past decade? I started out, like above, intent on having a map as one of the visualizations. The rest would include some combination of the standard charts.</p>
-
-        <img src="https://raw.githubusercontent.com/cheje/idv-projects/master/narrative/sketches/narrative_sketch.png" alt="Narrative project sketch" width="750" class="center" />
-
-      <p>The audience would be the same as my exploratory project. And again, I did a bit of data manipulation in R. I ended up with the following datasets, some of which were created later on in the process after playing around with the charts.</p>
-
-      <ul>
-      <li><a href="https://github.com/cheje/idv-projects/blob/master/data/hg_nys_2019.csv" target="_blank">hg_nys_2019.csv</a>: list of all 44 NYS hate groups in 2019, with their ideology, location and whether it served as the headquarters for a table</li>
-      <li><a href="https://github.com/cheje/idv-projects/blob/master/data/hg_ideology_pct_2019.csv" target="_blank">hg_ideology_pct_2019.csv</a>: Percent of each ideology out of total hate groups in NYS and US for a grouped bar chart</li>
-      <li><a href="https://github.com/cheje/idv-projects/blob/master/data/hg_nys_geocoded_2019.csv" target="_blank">hg_nys_geocoded_2019.csv</a>: List of cities with at least one hate group, their geographical coordinates, along with population and number of each ideology for the map and tooltips (with some HTML included in some of the fields for some formatting on the tooltip)</li>
-      <li><a href="https://github.com/cheje/idv-projects/blob/master/data/hg_nys_geocoded_2019.csv" target="_blank">hg_nys_ideologies.csv</a>: List of all ideologies and their number of groups in NYS since 2000 for a line chart.</li>
-      </ul>
-
-      <p>This step helped me to narrow down the visualizations I would use, shown in the mockup.</p>
-
-      <img src="https://raw.githubusercontent.com/cheje/idv-projects/master/narrative/sketches/narrative_mockup.png" alt="Narrative project mockup" width="750" class="center" />
-
-      <p>
-        This time the charts were much easier to make since they stood alone. I had not used CSS for many years before the course but thanks to a few months of practice, I was able to spend more time on it in this project - especially to lay out the charts and text, and find a combination of serif and sans-serif fonts. Different from the other assignments and projects, this was a more word-heavy report so I enjoyed this additional task of focusing on how to present the text. I also took more time to apply formatting to the visualizations that would be consistent to communicate that they are all part of the same project. I considered making more comparisons between NYS and the US, as I did in the line chart, but that could instead be something for improving and building on the project in the future. For this assignment, in addition to putting the visualizations together, an especially helpful element I learned was the CSS grid layout and how to put D3 charts and text side-by-side.
-      </p>
-
-      <p>
-        The final product turned out to follow the prospectus. I did have initial concerns about how 44 data points would translate into the visualizations but that size helped shaped my narrative and a change from working with larger datasets. The critiques helped inform me of other much-needed perspectives and user experiences, and served as a valuable reminder that even if I see it one way, no one else necessarily will. After working on a project for a while, you reach a point where you need new eyes.
-      </p>
-      <p>
-        To improve my narrative project, I would:
-      </p>
+        <p>
+          The final product turned out to, more or less, follow the prospectus and sketches. I did have initial concerns about how 44 data points would translate into the visualizations but that size helped shaped my narrative and was a change from working with larger datasets. The class critiques helped inform me of other much-needed perspectives and user experiences, and it served as a valuable reminder that even if I see something one way, no one else necessarily will. Hearing feedback will make you aware of ideas that never occurred to you and that come from the point of view of most viewers – that of not being especially familiar with the data.
+        </p>
+        <p>
+          To improve my narrative project, I would:
+        </p>
 
         <ul>
-          <li>
-            add more user interaction features such as sorting the bars and the table contents
-          </li>
-        <li>
-          add chart annotations using <a href="https://d3-annotation.susielu.com/" target="_blank">d3-annotation</a> or something similar
-        </li>
-        <li>
-          make the map have a solid black outline with a lighter interior color
-        </li>
+          <li>add more user interaction features such as sorting the bars and the table contents</li>
+          <li>add chart annotations using <a href="https://d3-annotation.susielu.com/" target="_blank">d3-annotation</a> or something similar</li>
+          <li>make the map have a solid black outline with a lighter interior color</li>
+          <li>try new types of charts</li>
         </ul>
 
         <p>
-          For future projects, I will model my design process after the one taught in class as I realized its importance through these assignments, especially to go back and refer to regardless of what stage you're in. D3 will always be an ongoing learning experience and I look forward to looking back on the class projects and having a better understanding of how exactly everything worked.
+          For future projects, I will model my design process after the one taught in class as I realized its importance through the assignments, especially for going back and refering to regardless of what stage you're in. D3 will always be an ongoing learning experience for me and I hope someday to return to the class assignments and see what I could have done differently, and be able to implement those changes and improvements.
         </p>
 
+        </div>
+      </div>
 
-    <p></p>
+    <script>
+      var togglers = document.querySelectorAll('[data-toggle="tab"]');
+
+      for (var i = 0; i < togglers.length; i++) {
+          togglers[i].addEventListener('click', function() {
+              var tabs = document.querySelectorAll('.tab');
+              for(var j = 0; j < tabs.length; j++) {
+                  tabs[j].classList.remove('active');
+              }
+              var $target = document.querySelector(this.getAttribute('data-target'));
+              $target.classList.add('active');
+          });
+      }
+    </script>
   </body>
 </html>
