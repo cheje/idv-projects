@@ -102,27 +102,6 @@ hr {
   padding: 1em;
 }
 
-/* .section#one {
-  display: grid;
-  grid-column-gap: 5px;
-  grid-template-columns: 50% 50%;
-  padding-right: 5em;
-}
-
-.section#one > .graph {
-  grid-column: 0 / 2;
-  grid-row: 1;
-}
-
-.section#one > .text {
-  grid-column: 2 / 3;
-  margin-top: 3em;
-}
-
-.axis path {
-  display: none;
-}*/
-
 /* map */
 
 path.county {
@@ -175,14 +154,6 @@ path.county {
 
 /* line chart */
 
-/*
-#line .labels {
-  font-size: 0.9em;
-  fill: #c70039;
-  text-transform: uppercase;
-}
-*/
-
 #line .axis text {
   font-size: 1.2em;
 }
@@ -195,12 +166,6 @@ path.county {
   stroke: #000;
   opacity: 1;
 }
-
-/*
-#line .axis path {
-  opacity: 1;
-}
-*/
 
 #line .grid line {
   stroke: #888;
@@ -310,6 +275,7 @@ td:not(:first-child) {
 }
 
 /* hate group definition tooltip */
+
 .def-tooltip {
   position: relative;
   display: inline-block;

@@ -43,19 +43,18 @@ export function bar() {
     .call(g => g.select(".domain").remove())
 
     const yAxis = g => g
-    .attr("transform", `translate(${margin.left},0)`)
-    .call(d3.axisLeft(yScale).ticks(null, "s"))
-    .call(g => g.select(".domain").remove())
-    .call(g => g.select(".tick:last-of-type text").clone()
-        .attr("x", 3)
-        .attr("text-anchor", "start")
-        .attr("font-weight", "bold")
-        .text(data.y))
+      .attr("transform", `translate(${margin.left},0)`)
+      .call(d3.axisLeft(yScale).ticks(null, "s"))
+      .call(g => g.select(".domain").remove())
+      .call(g => g.select(".tick:last-of-type text").clone()
+          .attr("x", 3)
+          .attr("text-anchor", "start")
+          .attr("font-weight", "bold")
+          .text(data.y))
 
     const color = d3
-    .scaleOrdinal()
-    .range(["#3282b8", "#C70039"])
-
+      .scaleOrdinal()
+      .range(["#3282b8", "#C70039"])
 
     const legend = svg => {
       const g = svg
@@ -90,18 +89,13 @@ export function bar() {
       .attr("width", width)
       .attr("height", height);
 
-      svg
-        .append("g")
-        .attr("class", "grid")
-        .attr("transform", `translate(${margin.left},0)`)
-        .call(make_y_gridlines()
-            .tickSize(-width)
-            .tickFormat(""));
-
-
-            var maxValue = d3.max([  // Find the max value of a list of 2 elements
-    d3.max(data, function(d) { return +d['New York']; })
-]);
+    svg
+      .append("g")
+      .attr("class", "grid")
+      .attr("transform", `translate(${margin.left},0)`)
+      .call(make_y_gridlines()
+          .tickSize(-width)
+          .tickFormat(""));
 
     const bars = svg.append("g")
       .selectAll("g")
@@ -119,13 +113,13 @@ export function bar() {
         .attr("fill", d => color(d.key))
         //.style("opacity", 0.7)
         .attr("opacity", function(d) {
-
-          if (d.value === maxValue) {
-                  return 1
+          const parentData = d3.select(this.parentNode).data()[0];
+          if (parentData['New York'] > parentData.US) {
+                  return 0.9
               } else {
                   return 0.5
               }
-          })
+          });
 
     svg.append("g")
         .call(xAxis)

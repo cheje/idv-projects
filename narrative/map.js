@@ -57,7 +57,6 @@ export function map() {
       .append("path")
       .attr("class", "county")
       .attr("d", d => path(d))
-      //.on("click", clicked)
       .attr("d", path);
 
     g
@@ -65,12 +64,6 @@ export function map() {
       .data(cities)
       .join("circle")
       .attr("r", d => cityRadius(d.city_total))
-      // .attr("fill", d => {
-      //   const pointColor = d3
-      //     .scaleLinear()
-      //     .domain([d3.min(cities, d => d.city_total), d3.max(cities, d => d.city_total)])
-      //     .range(["#fed976", "#e31a1c"]);
-      //   return pointColor(d.city_total)}) // https://www.d3-graph-gallery.com/graph/custom_color.html
       .attr("class", "cities")
       .attr("transform", d => {
         const [x, y] = projection([d.lon, d.lat]);

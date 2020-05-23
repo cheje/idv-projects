@@ -38,5 +38,7 @@ export function table() {
     .data(d => Object.values(d))
     .join("td")
       .text(d => d);
+      
   });
+
 }
