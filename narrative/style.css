@@ -195,13 +195,13 @@ path.county {
 }
 
 .rep-range {
-  fill: #faf2f2; /* #C70039;
-  fill-opacity: 0.05;*/
+  fill: #C70039;
+  fill-opacity: 0.1;
 }
 
 .dem-range {
-  fill: #f1fcfc; /* #0779e4, #ecfbfc
-  fill-opacity: 0.05;*/
+  fill: #0779e4; /*#ecfbfc*/
+  fill-opacity: 0.1;
 }
 
 /* table */

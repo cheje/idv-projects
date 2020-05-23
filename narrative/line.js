@@ -53,7 +53,11 @@ export function line() {
     yAxis = d3.axisLeft(yScale);
 
     // adding presidential terms: https://stackoverflow.com/questions/17797547/d3-how-do-you-highlight-a-range-of-dates-on-d3-a-line-chart
-    const leftBush = xScale(new Date("2000"));
+    const leftClinton = xScale(new Date("2000"));
+    const rightClinton = xScale(new Date("2001"));
+    const rangeClinton = rightClinton - leftClinton;
+
+    const leftBush = xScale(new Date("2001"));
     const rightBush = xScale(new Date("2009"));
     const rangeBush = rightBush - leftBush;
 
@@ -93,6 +97,13 @@ export function line() {
       .attr("width", width)
       .attr("height", height);
 
+    // Clinton admin
+    svg
+      .append("rect")
+      .attr("x", leftClinton)
+      .attr("width", rangeClinton)
+      .attr("height", height)
+      .attr("class", "dem-range");
     // Bush admin
     svg
       .append("rect")
