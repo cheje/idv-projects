@@ -8,6 +8,7 @@ class USstate {
     this.stateName
       .text(`${state.selectedState}`)
     }
+    
   }
 
 export { USstate };

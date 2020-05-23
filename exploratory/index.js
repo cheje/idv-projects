@@ -1,5 +1,5 @@
 import { USMap } from "./map.js";
-import { USstate } from "./state_name.js"; // new
+import { USstate } from "./state_name.js";
 import { Barchart } from "./barchart.js";
 import { Table } from "./table.js";
 

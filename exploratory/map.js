@@ -90,7 +90,6 @@ class USMap {
     }
 
     draw(state, setGlobalState) {
-
     }
   }
 

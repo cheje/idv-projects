@@ -45,14 +45,7 @@ class Table {
       .join("td")
       .text(d => d)
       .attr("class", "hate-groups");
-      // .join(
-      //   enter =>
-      //     enter
-      //       .append("td")
-      //       .attr("class", "hate-groups")
-      //       .text(d => d),
-      //     update => update,
-      //     exit => exit.remove())
+      
   }
 }
 
