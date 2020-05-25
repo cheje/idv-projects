@@ -15,8 +15,10 @@ body {
 }
 
 #dashboard {
-  display: grid; /* container */
-  grid-template-columns: 1fr 1fr 1fr; /* fr = fraction */
+  display: grid;
+  /* container */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* fr = fraction */
   /*grid-template-rows: 1fr, 1fr; /* 1/2 and 1/2, 1 frac-1 frac */
   column-gap: 0.5em;
   row-gap: 1em;
@@ -69,7 +71,7 @@ tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
-  border-bottom: 1px solid rgba(252,191,30,0.35);
+  border-bottom: 1px solid rgba(252, 191, 30, 0.35);
 }
 
 td {
@@ -101,7 +103,8 @@ p {
   font-size: 1em;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: #4169E1;
   text-decoration: none;
 }

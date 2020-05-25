@@ -32,8 +32,8 @@ class Table {
       "Ideology": d.ideology,
       "City": d.city
     }))
-      console.log(stateData);
-      console.log(tableStateData);
+    console.log(stateData);
+    console.log(tableStateData);
 
     this.tableRows
       //.append("tbody")
@@ -45,8 +45,10 @@ class Table {
       .join("td")
       .text(d => d)
       .attr("class", "hate-groups");
-      
+
   }
 }
 
-export { Table };
+export {
+  Table
+};

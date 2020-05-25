@@ -1,7 +1,15 @@
-import { USMap } from "./map.js";
-import { USstate } from "./state_name.js";
-import { Barchart } from "./barchart.js";
-import { Table } from "./table.js";
+import {
+  USMap
+} from "./map.js";
+import {
+  USstate
+} from "./state_name.js";
+import {
+  Barchart
+} from "./barchart.js";
+import {
+  Table
+} from "./table.js";
 
 let map, stateName, barchart, table;
 
@@ -27,9 +35,10 @@ Promise.all([
   state.domain = [
     0,
     d3.max(ideology
-      .map(d => [d["Anti-Immigrant"], d["Anti-LGBTQ"], d["Anti-Muslim"], d["Black Separatist"], d["Christian Identity"], d["General Hate"],	d["Hate Music"], d["Holocaust Denial"], d["Ku Klux Klan"], d["Male Supremacy"], d["Neo-Confederate"], d["Neo-Nazi"], d["Neo-Volkisch"], d["Racist Skinhead"], d["Radical Traditional Catholicism"], d["White Nationalist"]])
+      .map(d => [d["Anti-Immigrant"], d["Anti-LGBTQ"], d["Anti-Muslim"], d["Black Separatist"], d["Christian Identity"], d["General Hate"], d["Hate Music"], d["Holocaust Denial"], d["Ku Klux Klan"], d["Male Supremacy"], d["Neo-Confederate"], d["Neo-Nazi"], d["Neo-Volkisch"], d["Racist Skinhead"], d["Radical Traditional Catholicism"], d["White Nationalist"]])
       .flat()
-    )]
+    )
+  ]
   init();
 });
 
@@ -50,7 +59,10 @@ function draw() {
 
 // UTILITY FUNCTION: state updating function that we pass to our components so that they are able to update our global state object
 function setGlobalState(newState) {
-  state = { ...state, ...newState };
+  state = {
+    ...state,
+    ...newState
+  };
   console.log("new state:", state);
   draw();
 }

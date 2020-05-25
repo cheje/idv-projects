@@ -2,7 +2,12 @@ export function line() {
 
   const width = window.innerWidth * 0.65,
     height = window.innerHeight * 0.5,
-    margin = { top: 10, bottom: 30, left: 50, right: 10 },
+    margin = {
+      top: 10,
+      bottom: 30,
+      left: 50,
+      right: 10
+    },
     default_selection = "Select an Ideology";
 
   // these variables, initially empty, let us access
@@ -46,7 +51,7 @@ export function line() {
       return d3
         .axisLeft(yScale)
         .ticks(10)
-      }
+    }
 
     // + AXES
     const xAxis = d3.axisBottom(xScale);
@@ -72,7 +77,7 @@ export function line() {
     // + UI ELEMENT SETUP
     const selectElement = d3
       .select("#dropdown")
-      .on("change", function() {
+      .on("change", function () {
         console.log("New selection is", this.value);
         state.selectedIdeology = this.value;
         draw(); // re-draw the graph based on this new selection
@@ -181,19 +186,19 @@ export function line() {
       .data([filteredData])
       .join(
         enter =>
-          enter
-            .append("path")
-            .attr("class", "trend")
-            .attr("opacity", 0),
+        enter
+        .append("path")
+        .attr("class", "trend")
+        .attr("opacity", 0),
         update => update,
         exit => exit.remove()
       )
       .call(selection =>
         selection
-          .transition()
-          .duration(1000)
-          .attr("opacity", 1)
-          .attr("d", d => lineFunc(d))
+        .transition()
+        .duration(1000)
+        .attr("opacity", 1)
+        .attr("d", d => lineFunc(d))
       );
-    }
+  }
 }

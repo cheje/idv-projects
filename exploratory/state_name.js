@@ -7,8 +7,10 @@ class USstate {
   draw(state, setGlobalState) {
     this.stateName
       .text(`${state.selectedState}`)
-    }
-    
   }
 
-export { USstate };
+}
+
+export {
+  USstate
+};
